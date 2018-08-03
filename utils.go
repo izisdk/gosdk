@@ -77,7 +77,7 @@ func genHeaders(body []byte, headers map[string]string) map[string]string {
 	h := md5.New()
 	h.Write(body)
 	headers["Content-MD5"] = hex.EncodeToString(h.Sum(nil))
-	//headers["Content-Type"] = "application/json"
+	headers["Content-Type"] = "application/x-www-form-urlencoded"
 	return headers
 }
 
